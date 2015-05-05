@@ -1,12 +1,14 @@
-h3 Profile
-
-.row
-  .col-xs-4
-    .form-group
-      label(for='email') Email
-      input#email.form-control(type='text' ng-model='user.email')
-    .form-group
-      label(for='avatar') Avatar
-      input#avatar.form-control(type='url' ng-model='user.avatar')
-    .form-group
-      button.form-control.btn.btn-info(type='url' ng-click='update(user)') Update
+h3.text-center Profile
+.container
+  .row
+    .col-xs-4.col-xs-offset-2
+      .form-group
+        label(for='email') Email
+        input#email.form-control(type='text' ng-model='user.email')
+      .form-group
+        label(for='avatarForm') Avatar
+        input#avatarForm.form-control(type='url' ng-model='user.avatar')
+      .form-group
+        button.form-control.btn.btn-info(type='url' ng-click='update(user)') Update
+    .col-xs-4
+      img#avatar.img-responsive.thumbnail(ng-src='{{user.avatar}}')

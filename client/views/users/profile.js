@@ -2,6 +2,10 @@
 
 angular.module('roadtrip')
 .controller('ProfileCtrl', function($scope, $window, User){
+  User.show()
+  .then(function(response){
+    $scope.user = response.data;
+  });
 
   $scope.update = function(obj){
     var user = new User(obj);

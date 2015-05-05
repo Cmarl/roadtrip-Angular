@@ -8,6 +8,10 @@ angular.module('roadtrip')
     this.email = obj.email;
   }
 
+  User.show = function(){
+    return $http.get('/users');
+  };
+
   User.prototype.save = function(){
     return $http.put(nodeUrl + '/users', this);
   };
