@@ -9,7 +9,7 @@ angular.module('roadtrip')
   }
 
   User.show = function(){
-    return $http.get('/users');
+    return $http.get(nodeUrl + '/users');
   };
 
   User.prototype.save = function(){

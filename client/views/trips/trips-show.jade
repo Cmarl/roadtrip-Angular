@@ -1,0 +1,25 @@
+h1.text-center: em {{trip.name}}
+
+.row
+  .col-xs-6
+    h3.text-center Departure Date: {{trip.departure | date: 'MM-dd-yyyy'}}
+    h3.text-center Created On: {{trip.createdAt | date: 'MM-dd-yyyy'}}
+  .col-xs-6
+    .form-group
+      h3.text-center New Stop Name
+      input.form-control(type='text' ng-model='stop.name')
+      button.btn.btn-info.form-control(ng-click='create(stop)') Add Stop
+.row
+  .col-xs-6
+    #map.img-responsive.thumbnail
+  .col-xs-6
+    table.table.table-striped
+      thead
+        tr
+          th Stop Name
+      tbody
+        tr(ng-repeat='stop in trip.stops')
+          td {{stop.name}}
+          td {{stop.lat}}
+          td {{stop.lng}}
+          td: button.btn.btn-danger.btn-xs(ng-click='destroy(stop)') Delete

@@ -1,0 +1,19 @@
+h3.text-center Trip List
+.container
+  .row
+    .col-xs-8.col-xs-offset-2
+      table.table
+        thead
+          tr
+            th Name
+            th Departue
+            th Created At
+            th Go
+            th DESTROY
+        tbody
+          tr(ng-repeat='trip in trips')
+            td {{trip.name}}
+            td {{trip.departure | date: 'MM-dd-yyyy'}}
+            td {{trip.createdAt | date: 'MM-dd-yyyy'}}
+            td: button.btn.btn-xs.btn-info(ui-sref='trips.show({tripId: trip._id})') Show
+            td: button.btn.btn-xs.btn-danger(ng-click='destroy(trip)') Delete Trip

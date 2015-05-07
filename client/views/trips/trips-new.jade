@@ -1,0 +1,12 @@
+h3.text-center New Trip
+.container
+  .row
+    .col-xs-8.col-xs-offset-2
+      .form-group
+        label(for='tripName') Trip Name
+        input#tripName.form-control(type='text' ng-model='trip.name')
+      .form-group
+        label(for='tripDate') Departure Date
+        input#tripDate.form-control(type='date' ng-model='trip.departure')
+      .form-group
+        button.form-control.btn.btn-info(ng-click='create(trip)') Create Trip

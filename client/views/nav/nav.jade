@@ -6,11 +6,13 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/') Roadtripp
+      a.navbar-brand(href='/') Roadtrip
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar(ng-show='activeUser')
         li: a(ui-sref='home'): i.fa.fa.fa-home &nbsp; Home
         li: a(ui-sref='profile'): i.fa.fa.fa-info &nbsp; Profile
+        li: a(ui-sref='trips.new'): i.fa.fa.fa-star-o &nbsp; New Trip
+        li: a(ui-sref='trips.list'): i.fa.fa.fa-list &nbsp; Trip List
         li: a(ng-click='logout()'): i.fa.fa-sign-out &nbsp; {{displayName}}
       ul.nav.navbar-nav.navbar(ng-hide='activeUser')
         li: a(ui-sref='home'): i.fa.fa.fa-home &nbsp; Home
